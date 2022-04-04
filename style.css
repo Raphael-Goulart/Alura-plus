@@ -1,0 +1,239 @@
+:root {
+	--branco-principal: #FFFFFF; /*obs-1*/
+	--cinza-secundário: #C0C0C0; 
+	--botão-azul: #167BF7;
+	--cor-de-fundo: #00030C;
+	--fonte-principal: 'Inter';
+}
+
+body {
+	background-color: var(--cor-de-fundo); /*para usar a variável no caso da cor de fundo, muito mais simples*/
+	color: var(--branco-principal);
+	font-family: var(--fonte-principal); /*traz a familia da fonte decretada no link do html*/
+	font-size: 16px;
+	font-weight: 400;
+}
+
+*{ /*pega todos os elementos html seleciona e coloca o estilo que nos quisermos e não o padrão */
+	margin: 0;	
+	padding: 0;
+}
+
+.principal {
+	background-image: url("img/Background.png"); /*obs-2*/
+	background-repeat: no-repeat; /*fará com que a imagem não se repita na pág*/
+	background-size: contain; /*obs-4*/
+	align-items: center;/*alinhou os itens desta classe dentro do grid que está dividido*/
+	text-align: center;/*tambem alinhou o texto no centro do grid que está dividido*/
+}
+
+.container__titulo{
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 34px;
+}
+
+.container {
+	height: 100vh; /*obs-3*/
+	display: grid; /*defino o display como grid para separa-lo em colunas*/
+	grid-template-columns: 50% 50%; /*aqui separo em duas colunas de 50%*/
+}
+
+.container__botao {
+	background-color: var(--botão-azul); /*colocar cor de fundo nesse botão*/
+	border-radius: 5px; /*fazer borda no botão*/
+	padding: 1em;
+	color: var(--branco-principal);
+	display: block; /*torna o elemento um bloco igual parágrafos e cabeçalhos*/
+	text-decoration: none;/*tira o sublinhado*/
+	margin-bottom: 1em;
+}
+
+.botao__secundario {
+	background-color: transparent;
+	border: 2px solid #FFFFFF;
+}
+
+.texto-observacao{
+	margin: 1em 0 0;
+	font-size: 12px;
+	font-weight: 400;
+	color: var(--cinza-secundário);
+}
+
+.container__imagem{ /*movimentou a imagem*/
+	margin: 1em 0 2em 0;
+}
+
+.container__caixa{ /*fez uma margem em todos os itens da div*/
+	margin: 0 6em;
+}
+
+.secundario{ /*puxa a classe da section container secundario e aplica a todos dessa section*/
+	align-items: center; /*ou seja irá alinhar esses itens imagem e h2 e p ao centro*/
+}
+
+.secundario__imagem{ /*puxa essa classe para definir uma largura para a img*/
+	width: 70%;
+	margin-left: 10em;
+	margin-right: 10em;
+}
+
+.container__descricao{
+	margin-right: 5em;
+	margin-left: 0.5em;
+}
+
+.descricao__titulo{
+	font-weight: 700;
+	font-size: 48px;
+	color: var(--branco-principal);
+	margin-bottom: 0.1em;
+}
+
+.descricao__texto{
+	color: var(--branco-principal);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.terceiro__botao{
+	display: inline-block; /*limita o botão apenas ao que está escrito inline e não mais na linha toda*/
+}
+
+.descricao__texto__dois{
+	margin-left: 5em;
+	margin-bottom: 1em;
+	color: var(--branco-principal);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.terceiro__botao{
+	margin-left: 5em;
+}
+
+.terceira__imagem{
+	width: 70%;
+	margin-left: 5em;
+}
+
+.quarta__imagem{
+	width: 75%;
+	margin-left: 5em;
+	margin-right: 1em;
+}
+
+.dispositivos{ 
+	text-align: center;
+}
+
+.dispositivos__lista{
+	display: flex; /*Obs5*/
+	justify-content: center;
+	list-style-type: none; /*essa lista que tinha um estilo com pontos nos removemos esses pontos*/
+	margin: 5em 0;
+}
+
+.dispositivos__titulo{
+	font-size: 48px;
+	color: var(--branco-principal);
+	font-weight: 700;
+}
+
+.lista__item{
+	font-size: 16px;
+	color: var(--branco-principal);
+	font-weight: 700;
+}
+
+.rodape{
+
+}
+
+.rodape__logo{
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+.rodape__lista{
+	display: flex; /*Obs5*/
+	justify-content: center;
+	list-style-type: none;
+	color: var(--branco-principal)
+}
+
+.lista__link + li{
+	margin-left: 1em;
+}
+
+.lista__link a{
+	text-decoration: none;
+	color: var(--branco-principal);
+
+}
+
+.lista__link a:hover{
+	color: red;
+
+}
+
+.rodape__texto{
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	text-align: center;
+	margin: 1em 4em;
+	color: var(--cinza-secundário);
+}
+
+.rodape__texto ~ p{
+	margin-bottom: 5em;
+}
+
+
+
+
+
+
+
+
+
+/* 
+Obs - 1 
+Variáveis CSS auxiliam no entendimento do uso das cores por terem nomes que fazem sentido com o seu uso, 
+consequentemente isso também facilita a atribuição nos elementos HTML. Além desses dois benefícios, 
+facilita na manutenção do código: é possível alterar o valor de alguma cor reescrevendo um único
+lugar do código.
+
+Obs - 2 
+.principal{
+background-image: url("img/Background.png");
+Colocar a imagem dessa forma apenas quando a imagem que será exibida não represente algo relevante para quem
+não consegue ver a imagem, ou seja se ela não estiver ali não faz diferença no entendimento do conteúdo.
+Quando ela faz diferença no entendimento carregue a img no html para usar o texto alternativo (alt).
+
+Obs - 3
+As unidades vh e vw são úteis quando é preciso usar a largura ou a altura da viewport.
+A medida vh é igual a 1/100 da altura da viewport. Então, por exemplo,
+se a altura do navegador é 900px, 1vh equivale a 9px.
+
+Obs - 4
+background-size: contain;
+Contain é uma palavra-chave que aumenta o máximo possível a imagem mantendo a sua proporção (a imagem não fica esticada).
+A imagem tenta ocupar o espaço inteiro do container. Quando a imagem e o container tem diferentes dimensões,
+as áreas não preenchidas (tanto top/bottom ou left/right) são preenchidas com a cor de fundo.
+
+Obs - 5 
+
+O display flex, faz com que esses itens se alinhem um ao lado do outro, transformando a lista
+<ul> em um flex container e todos os seus filhos <li> em flex direction onde o padrão é uma roll, ou seja em
+sequencia fluida de um alinhamento. é muito usual.
+
+
+
+
+
+*/
