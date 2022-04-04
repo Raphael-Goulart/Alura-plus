@@ -22,7 +22,8 @@ body {
 .principal {
 	background-image: url("img/Background.png"); /*obs-2*/
 	background-repeat: no-repeat; /*fará com que a imagem não se repita na pág*/
-	background-size: contain; /*obs-4*/
+	/*background-size: contain; /*obs-4*/
+	background-size: 100%;/* dessa forma a img de fundo ocupou todo o espaço sem deixar espaço no lado direito*/
 	align-items: center;/*alinhou os itens desta classe dentro do grid que está dividido*/
 	text-align: center;/*tambem alinhou o texto no centro do grid que está dividido*/
 }
